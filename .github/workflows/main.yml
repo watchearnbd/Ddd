@@ -25,13 +25,6 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: 'temurin'
 
-      - name: Install Gradle and generate wrapper
-        run: |
-          wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
-          unzip -q gradle-8.11.1-bin.zip
-          ./gradle-8.11.1/bin/gradle wrapper --gradle-version 8.11.1
-          chmod +x gradlew
-
       - name: Gradle Cache
         uses: actions/cache@v4
         with:
@@ -40,6 +33,13 @@ jobs:
             ~/.gradle/wrapper
           key: gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-
+
+      - name: Install Gradle and generate wrapper
+        run: |
+          wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
+          unzip -q gradle-8.11.1-bin.zip
+          ./gradle-8.11.1/bin/gradle wrapper --gradle-version 8.11.1 --project-dir .
+          chmod +x gradlew
 
       - name: Create env file
         run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
@@ -72,13 +72,6 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: 'temurin'
 
-      - name: Install Gradle and generate wrapper
-        run: |
-          wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
-          unzip -q gradle-8.11.1-bin.zip
-          ./gradle-8.11.1/bin/gradle wrapper --gradle-version 8.11.1
-          chmod +x gradlew
-
       - name: Gradle Cache
         uses: actions/cache@v4
         with:
@@ -87,6 +80,13 @@ jobs:
             ~/.gradle/wrapper
           key: gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-
+
+      - name: Install Gradle and generate wrapper
+        run: |
+          wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
+          unzip -q gradle-8.11.1-bin.zip
+          ./gradle-8.11.1/bin/gradle wrapper --gradle-version 8.11.1 --project-dir .
+          chmod +x gradlew
 
       - name: Create env file
         run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
@@ -116,13 +116,6 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: 'temurin'
 
-      - name: Install Gradle and generate wrapper
-        run: |
-          wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
-          unzip -q gradle-8.11.1-bin.zip
-          ./gradle-8.11.1/bin/gradle wrapper --gradle-version 8.11.1
-          chmod +x gradlew
-
       - name: Gradle Cache
         uses: actions/cache@v4
         with:
@@ -131,6 +124,13 @@ jobs:
             ~/.gradle/wrapper
           key: gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-
+
+      - name: Install Gradle and generate wrapper
+        run: |
+          wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
+          unzip -q gradle-8.11.1-bin.zip
+          ./gradle-8.11.1/bin/gradle wrapper --gradle-version 8.11.1 --project-dir .
+          chmod +x gradlew
 
       - name: Create env file
         run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
