@@ -38,7 +38,8 @@ jobs:
         run: |
           wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
           unzip -q gradle-8.11.1-bin.zip
-          ./gradle-8.11.1/bin/gradle wrapper --gradle-version 8.11.1 --project-dir .
+          export PATH=$PATH:$(pwd)/gradle-8.11.1/bin
+          gradle wrapper --gradle-version 8.11.1
           chmod +x gradlew
 
       - name: Create env file
@@ -85,7 +86,8 @@ jobs:
         run: |
           wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
           unzip -q gradle-8.11.1-bin.zip
-          ./gradle-8.11.1/bin/gradle wrapper --gradle-version 8.11.1 --project-dir .
+          export PATH=$PATH:$(pwd)/gradle-8.11.1/bin
+          gradle wrapper --gradle-version 8.11.1
           chmod +x gradlew
 
       - name: Create env file
@@ -129,7 +131,8 @@ jobs:
         run: |
           wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
           unzip -q gradle-8.11.1-bin.zip
-          ./gradle-8.11.1/bin/gradle wrapper --gradle-version 8.11.1 --project-dir .
+          export PATH=$PATH:$(pwd)/gradle-8.11.1/bin
+          gradle wrapper --gradle-version 8.11.1
           chmod +x gradlew
 
       - name: Create env file
