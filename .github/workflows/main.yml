@@ -34,8 +34,9 @@ jobs:
           key: gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-
 
-      - name: Install Gradle and generate wrapper
+      - name: Fix settings and generate wrapper
         run: |
+          sed -i 's/rootProject.name = .*/rootProject.name = "Ddd"/' settings.gradle.kts
           wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
           unzip -q gradle-8.11.1-bin.zip
           export PATH=$PATH:$(pwd)/gradle-8.11.1/bin
@@ -82,8 +83,9 @@ jobs:
           key: gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-
 
-      - name: Install Gradle and generate wrapper
+      - name: Fix settings and generate wrapper
         run: |
+          sed -i 's/rootProject.name = .*/rootProject.name = "Ddd"/' settings.gradle.kts
           wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
           unzip -q gradle-8.11.1-bin.zip
           export PATH=$PATH:$(pwd)/gradle-8.11.1/bin
@@ -127,8 +129,9 @@ jobs:
           key: gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-
 
-      - name: Install Gradle and generate wrapper
+      - name: Fix settings and generate wrapper
         run: |
+          sed -i 's/rootProject.name = .*/rootProject.name = "Ddd"/' settings.gradle.kts
           wget -q https://services.gradle.org/distributions/gradle-8.11.1-bin.zip
           unzip -q gradle-8.11.1-bin.zip
           export PATH=$PATH:$(pwd)/gradle-8.11.1/bin
