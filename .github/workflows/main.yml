@@ -25,6 +25,17 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: 'temurin'
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.11.1'
+
+      - name: Generate Gradle Wrapper
+        run: gradle wrapper --gradle-version 8.11.1
+
+      - name: gradlew permission
+        run: chmod +x gradlew
+
       - name: Gradle Cache
         uses: actions/cache@v4
         with:
@@ -33,9 +44,6 @@ jobs:
             ~/.gradle/wrapper
           key: gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-
-
-      - name: gradlew permission
-        run: chmod +x gradlew
 
       - name: Create env file
         run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
@@ -68,6 +76,17 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: 'temurin'
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.11.1'
+
+      - name: Generate Gradle Wrapper
+        run: gradle wrapper --gradle-version 8.11.1
+
+      - name: gradlew permission
+        run: chmod +x gradlew
+
       - name: Gradle Cache
         uses: actions/cache@v4
         with:
@@ -76,9 +95,6 @@ jobs:
             ~/.gradle/wrapper
           key: gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-
-
-      - name: gradlew permission
-        run: chmod +x gradlew
 
       - name: Create env file
         run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
@@ -108,6 +124,17 @@ jobs:
           java-version: ${{ env.JAVA_VERSION }}
           distribution: 'temurin'
 
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.11.1'
+
+      - name: Generate Gradle Wrapper
+        run: gradle wrapper --gradle-version 8.11.1
+
+      - name: gradlew permission
+        run: chmod +x gradlew
+
       - name: Gradle Cache
         uses: actions/cache@v4
         with:
@@ -116,9 +143,6 @@ jobs:
             ~/.gradle/wrapper
           key: gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-
-
-      - name: gradlew permission
-        run: chmod +x gradlew
 
       - name: Create env file
         run: echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" >> .env
